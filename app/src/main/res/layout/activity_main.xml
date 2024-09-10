@@ -1,34 +1,38 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:padding="16dp">
 
-    <TextView
-        android:id="@+id/wordDisplay"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="24sp"
-        android:text="Guess the word!" />
-
     <EditText
-        android:id="@+id/guessInput"
+        android:id="@+id/amountEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter your guess"
-        android:minHeight="48dp" />
+        android:hint="Amount"
+        android:inputType="numberDecimal" />
+
+    <Spinner
+        android:id="@+id/currencySpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/amountEditText"
+        android:entries="@array/currency_array"
+        android:layout_marginTop="16dp" />
 
     <Button
-        android:id="@+id/submitGuess"
+        android:id="@+id/convertButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Submit" />
+        android:text="Convert"
+        android:layout_below="@id/currencySpinner"
+        android:layout_marginTop="16dp" />
 
     <TextView
-        android:id="@+id/resultDisplay"
+        android:id="@+id/resultTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:paddingTop="20dp"/>
-</LinearLayout>
+        android:text="Result"
+        android:layout_below="@id/convertButton"
+        android:layout_marginTop="16dp" />
+
+</RelativeLayout>
